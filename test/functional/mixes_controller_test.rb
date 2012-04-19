@@ -18,7 +18,7 @@ class MixesControllerTest < ActionController::TestCase
 
   test "should create mix" do
     assert_difference('Mix.count') do
-      post :create, mix: { owner: @mix.owner }
+      post :create, mix: { autor: @mix.autor, nome: @mix.nome }
     end
 
     assert_redirected_to mix_path(assigns(:mix))
@@ -35,7 +35,7 @@ class MixesControllerTest < ActionController::TestCase
   end
 
   test "should update mix" do
-    put :update, id: @mix, mix: { owner: @mix.owner }
+    put :update, id: @mix, mix: { autor: @mix.autor, nome: @mix.nome }
     assert_redirected_to mix_path(assigns(:mix))
   end
 

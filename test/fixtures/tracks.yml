@@ -1,17 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  owner: MyString
-  original_track_id: 1
-  instrument: MyString
-  stream_url: MyString
-  bpm: 1
-  duration: 1
+  url: MyString
 
 two:
-  owner: MyString
-  original_track_id: 1
-  instrument: MyString
-  stream_url: MyString
-  bpm: 1
-  duration: 1
+  url: MyString

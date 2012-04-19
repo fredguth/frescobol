@@ -1,5 +1,3 @@
 class Mix < ActiveRecord::Base
-  attr_accessible :owner
-  
-  has_many :tracks
+  attr_accessible :autor, :nome
 end

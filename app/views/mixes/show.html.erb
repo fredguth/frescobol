@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Owner:</b>
-  <%= @mix.owner %>
-</p>
+<h1>Mix  <%= @mix.nome %> <small>por <%= @mix.autor %> </h1>
+<div class="row">
+<div class="span7">
+</div>
+</div>
 
-
-<%= link_to 'Edit', edit_mix_path(@mix) %> |
-<%= link_to 'Back', mixes_path %>
+<%= link_to 'Editar', edit_mix_path(@mix) %> |
+<%= link_to 'Voltar', mixes_path %>

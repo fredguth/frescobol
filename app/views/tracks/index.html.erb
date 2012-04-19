@@ -2,12 +2,7 @@
 
 <table>
   <tr>
-    <th>Owner</th>
-    <th>Original track</th>
-    <th>Instrument</th>
-    <th>Stream url</th>
-    <th>Bpm</th>
-    <th>Duration</th>
+    <th>Url</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,12 +10,7 @@
 
 <% @tracks.each do |track| %>
   <tr>
-    <td><%= track.owner %></td>
-    <td><%= track.original_track_id %></td>
-    <td><%= track.instrument %></td>
-    <td><%= track.stream_url %></td>
-    <td><%= track.bpm %></td>
-    <td><%= track.duration %></td>
+    <td><%= track.url %></td>
     <td><%= link_to 'Show', track %></td>
     <td><%= link_to 'Edit', edit_track_path(track) %></td>
     <td><%= link_to 'Destroy', track, confirm: 'Are you sure?', method: :delete %></td>

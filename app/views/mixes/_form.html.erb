@@ -1,4 +1,5 @@
-<%= form_for(@mix) do |f| %>
+
+<%= form_for @mix, :html => {:class =>"form-horizontal"} do |f| %>
   <% if @mix.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mix.errors.count, "error") %> prohibited this mix from being saved:</h2>
@@ -12,10 +13,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar"%>
   </div>
 <% end %>
+
+  

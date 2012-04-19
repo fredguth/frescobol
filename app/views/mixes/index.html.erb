@@ -1,23 +1,35 @@
-<h1>Listing mixes</h1>
-
-<table>
-  <tr>
-    <th>Owner</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @mixes.each do |mix| %>
-  <tr>
-    <td><%= mix.owner %></td>
-    <td><%= link_to 'Show', mix %></td>
-    <td><%= link_to 'Edit', edit_mix_path(mix) %></td>
-    <td><%= link_to 'Destroy', mix, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Mix', new_mix_path %>
+<h1>Lista de Mixes</h1>
+<div class="row">
+<div class="span7">
+		<table class="table table-striped">
+		  <tr>
+		    <th class="span2">Nome</th>
+		    <th class="span2">Autor</th>
+		    <th class="span2"></th>
+		  </tr>
+		
+		<% @mixes.each do |mix| %>
+		  <tr>
+		    <td><%= mix.nome %></td>
+		    <td><%= mix.autor %></td>
+		     <td align="right">
+          	 <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_mix_path(mix), :class => 'btn btn-mini' %>
+          	 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      mix_path(mix),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        	</td>
+      		</tr>
+		 
+		<% end %>
+		</table>
+		
+		<br />
+		
+		<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_mix_path,
+            :class => 'btn btn-primary' %>
+</div>
+</div>
