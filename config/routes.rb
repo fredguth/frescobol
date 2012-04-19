@@ -1,7 +1,10 @@
 Frescobol::Application.routes.draw do
-  resources :tracks
+  
 
-  resources :mixes
+  resources :mixes do
+   resources :tracks
+
+end
 
   get "home/index"
 

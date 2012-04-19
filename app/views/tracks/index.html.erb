@@ -1,23 +1,30 @@
-<h1>Listing tracks</h1>
+<div class="row">
+<div class="span7">
+		<table class="table table-striped">
+		  <tr>
+		    <th class="span2">id</th>
+		    <th class="span2">URL</th>
+		    <th class="span2"></th>
+		  </tr>
+		
+		<% @tracks.each do |mix| %>
+		  <tr>
+		    <td><%= track.id %></td>
+		    <td><%= track.url %></td>
+		     <td align="right">
+          	 <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_track_path(track), :class => 'btn btn-mini' %>
+          	 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      track_path(track),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        	</td>
+      		</tr>
+		 
+		<% end %>
+		</table>
+		
 
-<table>
-  <tr>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tracks.each do |track| %>
-  <tr>
-    <td><%= track.url %></td>
-    <td><%= link_to 'Show', track %></td>
-    <td><%= link_to 'Edit', edit_track_path(track) %></td>
-    <td><%= link_to 'Destroy', track, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Track', new_track_path %>
+</div>
+</div>
