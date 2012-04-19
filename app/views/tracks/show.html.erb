@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Owner:</b>
+  <%= @track.owner %>
+</p>
+
+<p>
+  <b>Original track:</b>
+  <%= @track.original_track_id %>
+</p>
+
+<p>
+  <b>Instrument:</b>
+  <%= @track.instrument %>
+</p>
+
+<p>
+  <b>Stream url:</b>
+  <%= @track.stream_url %>
+</p>
+
+<p>
+  <b>Bpm:</b>
+  <%= @track.bpm %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @track.duration %>
+</p>
+
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>
