@@ -10,7 +10,7 @@
 		
 		<% @mixes.each do |mix| %>
 		  <tr>
-		    <td><%= mix.nome %></td>
+		    <td><%= link_to mix.nome, mix_path(mix) %> </td>
 		    <td><%= mix.autor %></td>
 		     <td align="right">
           	 <%= link_to t('.edit', :default => t("helpers.links.edit")),

@@ -21,7 +21,7 @@ function Player() {
   	var self = this;
   	var pl = this;
   	var sm = soundManager; // soundManager instance
-  	SC.initialize({ client_id: "cf83cbe2fc093eb561ed68e211b0d5fe"});
+  	
     SC.get("/users/radioguidance/tracks", {limit: 2}, function(tracks){
 		so1=SC.stream(tracks[0].uri);
 		so2=SC.stream(tracks[1].uri);
@@ -30,7 +30,7 @@ function Player() {
 		so2.autoLoad = true;
 		so2.autoPlay = true;
 		so1.play();
-		//so2.play();
+		so2.play();
 	});
 	
 	/*SC.stream("/users/radioguidance/tracks", {limit: 1}, function(tracks){
@@ -71,7 +71,12 @@ $(function() {
 	  
 	soundManager.onready(function() {
 	  // soundManager.createSound() etc. may now be called
-	  myPlayer = new Player();
+	  SC.initialize({ client_id: "cf83cbe2fc093eb561ed68e211b0d5fe"});
+	 //myPlayer = new Player();	
+	  $('a[id="frescobolPlayer"]').click(function(){myPlayer = new Player();});
+// 	  	
+	  // }
+	  
 	});
 
 });
