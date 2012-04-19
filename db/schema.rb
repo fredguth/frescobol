@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419063547) do
+ActiveRecord::Schema.define(:version => 20120419090907) do
 
   create_table "mixes", :force => true do |t|
     t.string   "nome"
@@ -22,8 +22,11 @@ ActiveRecord::Schema.define(:version => 20120419063547) do
 
   create_table "tracks", :force => true do |t|
     t.string   "url"
+    t.integer  "mix_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "tracks", ["mix_id"], :name => "index_tracks_on_mix_id"
 
 end
