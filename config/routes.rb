@@ -1,4 +1,8 @@
 Frescobol::Application.routes.draw do
+  resources :mixes
+
+  resources :tracks
+
   get "home/index"
 
   # The priority is based upon order of creation:
