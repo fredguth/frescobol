@@ -17,21 +17,22 @@
 //= require_tree .
 
 
-function Player() {
+function Player(mytracks) {
+	console.debug(mytracks[0]);
+	console.debug(mytracks[1]);
   	var self = this;
   	var pl = this;
   	var sm = soundManager; // soundManager instance
   	
-    SC.get("/users/radioguidance/tracks", {limit: 2}, function(tracks){
-		so1=SC.stream(tracks[0].uri);
-		so2=SC.stream(tracks[1].uri);
+		so1=SC.stream(mytracks[0]);
+		so2=SC.stream(mytracks[1]);
 		so1.autoLoad = true;
 		so1.autoPlay = true;
 		so2.autoLoad = true;
 		so2.autoPlay = true;
 		so1.play();
 		so2.play();
-	});
+	
 	
 	/*SC.stream("/users/radioguidance/tracks", {limit: 1}, function(tracks){
 			
@@ -73,7 +74,7 @@ $(function() {
 	  // soundManager.createSound() etc. may now be called
 	  SC.initialize({ client_id: "cf83cbe2fc093eb561ed68e211b0d5fe"});
 	 //myPlayer = new Player();	
-	  $('a[id="frescobolPlayer"]').click(function(){myPlayer = new Player();});
+	  $('a[id="frescobolPlayer"]').click(function(){myPlayer = new Player(myTracks);});
 // 	  	
 	  // }
 	  
